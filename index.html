@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autofill.pw - secure and random password generator</title>
+    <meta name="description" content="Generate strong, random passwords with Autofill.pw. Customize length, include symbols, numbers, and Cyrillic characters. Securely generated in your browser.">
+    <meta name="keywords" content="password generator, random password, secure password, autofill.pw, strong password, online password generator, privacy, cyrillic password, generator lozinki, sigurna lozinka">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />    
+    <script type="text/javascript" src="main.js" defer></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body class="dark-mode"> 
+
+    <div class="container">
+        <header>
+            <div class="header-top-controls">
+                <div class="language-switcher">
+                    <button id="langEnButton" class="lang-button active" data-lang="en">EN</button>
+                    <button id="langSrButton" class="lang-button" data-lang="sr">SR</button>
+                </div>
+                <button id="themeToggle" class="theme-toggle-button" aria-label="Toggle theme">
+                    <i class="fas fa-sun"></i>
+                </button>
+            </div>
+            <div class="logo">autofill.<span id="logoPw" class="logo-pw">pw</span></div>
+            </header>
+
+        <main>
+            <div class="password-display-area">
+                <div id="generatedPassword"></div>
+                <button id="copyButton"><i class="fas fa-copy"></i><span id="copyButtonText">Copy</span></button>
+                <span id="copyMessage"></span>
+            </div>
+
+            <div class="options-grid">
+                <div class="option-group">
+                    <label for="length"><span id="passwordLengthLabel">Password length</span>: <span id="lengthValue">16</span></label>
+                    <input type="range" id="length" min="8" max="64" value="16">
+                </div>
+
+                <div class="option-group">
+                    <label id="characterTypesLabel">Character types:</label>
+                    <label class="option-item switch-label" for="includeUppercase">
+                        <span id="uppercaseLabelText">Uppercase (A-Z)</span>
+                        <div class="switch">
+                            <input type="checkbox" id="includeUppercase" checked>
+                            <span class="slider-custom"></span>
+                        </div>
+                    </label>
+                     <label class="option-item switch-label" for="includeLowercase">
+                        <span id="lowercaseLabelText">Lowercase (a-z)</span>
+                        <div class="switch">
+                            <input type="checkbox" id="includeLowercase" checked>
+                            <span class="slider-custom"></span>
+                        </div>
+                    </label>
+                    <label class="option-item switch-label" for="includeNumbers">
+                        <span id="numbersLabelText">Numbers (0-9)</span>
+                        <div class="switch">
+                            <input type="checkbox" id="includeNumbers" checked>
+                            <span class="slider-custom"></span>
+                        </div>
+                    </label>
+                    <label class="option-item switch-label" for="includeSymbols">
+                        <span id="symbolsLabelText">Symbols (!@#$)</span>
+                        <div class="switch">
+                            <input type="checkbox" id="includeSymbols" checked>
+                            <span class="slider-custom"></span>
+                        </div>
+                    </label>
+                </div>
+            
+                <div class="option-group">
+                    <label class="option-item switch-label" for="includeCyrillic">
+                        <span id="mixCyrillicLabelText">Mix with Cyrillic (а-ш, А-Ш)</span>
+                        <div class="switch">
+                            <input type="checkbox" id="includeCyrillic">
+                            <span class="slider-custom"></span>
+                        </div>
+                    </label>
+                </div>
+            </div>
+
+            <button id="generateButton">Generate password</button>
+            <div id="errorMessage" class="error-message"></div>
+        </main>
+    </div>
+
+    <footer>
+        <p class="privacy-warning" id="privacyWarningText">autofill.pw is committed to your privacy. We do not collect, store, or transmit any personal data, including the passwords you generate. All operations are performed entirely within your web browser, on your device.</p>
+        <p class="copyright">&copy; <span id="currentYear"></span> autofill.pw. <span id="allRightsReservedText">All rights reserved.</span><br/>autofill.pw made with &#10084; by <a href="https://riri.my/" style="color: #E91E63;;">Rina</a> | <a href="https://github.com/ririmy/autofill.pw" style="color: #E91E63;;">Source code</a></p>
+    </footer>
+</body>
+</html>
